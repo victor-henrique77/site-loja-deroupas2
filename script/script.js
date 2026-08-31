@@ -1,13 +1,13 @@
 const products = [
         {
           id: 1,
-          name: "Camisa Oxford Essential",
+          name: "Tênis esportivo",
           cat: "Masculino",
-          price: 149.9,
-          old: 189.9,
+          price: 1499.9,
+          old: 1899.9,
           tag: "-21%",
-          desc: "Algodão premium com caimento confortável.",
-          img: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=900&q=85",
+          desc: "Tenis confortavel",
+          img: "img/tenis esportivo.jpg",
         },
         {
           id: 2,
