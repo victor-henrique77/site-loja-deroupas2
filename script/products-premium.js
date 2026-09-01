@@ -12,7 +12,7 @@ products.push(
     old: 299.9,
     tag: "-17%",
     desc: "Camiseta premium de alta performance com tecido ultraleve e secagem rápida.",
-    img: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 102,
@@ -22,7 +22,7 @@ products.push(
     old: null,
     tag: "Novo",
     desc: "Short esportivo sofisticado com mobilidade, leveza e acabamento premium.",
-    img: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 103,
@@ -32,7 +32,7 @@ products.push(
     old: 529.9,
     tag: "-15%",
     desc: "Jaqueta técnica com corte atlético, proteção contra vento e visual minimalista.",
-    img: "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 104,
@@ -42,7 +42,7 @@ products.push(
     old: null,
     tag: "Premium",
     desc: "Calça esportiva de alta elasticidade para treino, viagem e rotina urbana.",
-    img: "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1517445312882-bc9910d016b7?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 105,
@@ -52,7 +52,7 @@ products.push(
     old: 349.9,
     tag: "-14%",
     desc: "Polo esportiva premium com estrutura respirável e acabamento refinado.",
-    img: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1625910513411-828bf449750b?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 106,
@@ -62,7 +62,7 @@ products.push(
     old: null,
     tag: "Novo",
     desc: "Moletom técnico de toque macio, capuz estruturado e design contemporâneo.",
-    img: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 107,
@@ -72,7 +72,7 @@ products.push(
     old: 289.9,
     tag: "-17%",
     desc: "Top de treino premium com sustentação confortável e tecido respirável.",
-    img: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 108,
@@ -92,7 +92,7 @@ products.push(
     old: 599.9,
     tag: "-13%",
     desc: "Conjunto esportivo premium pensado para treino intenso e conforto prolongado.",
-    img: "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 110,
@@ -102,7 +102,7 @@ products.push(
     old: null,
     tag: "Novo",
     desc: "Jaqueta leve de performance com silhueta elegante e proteção para atividades externas.",
-    img: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 111,
@@ -112,7 +112,7 @@ products.push(
     old: 269.9,
     tag: "-15%",
     desc: "Short de corrida ultraleve com caimento confortável e acabamento esportivo premium.",
-    img: "https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 112,
@@ -122,7 +122,7 @@ products.push(
     old: null,
     tag: "Premium",
     desc: "Blusa esportiva de toque macio com visual clean para treino e lifestyle.",
-    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 113,
@@ -142,7 +142,7 @@ products.push(
     old: null,
     tag: "Premium",
     desc: "Tênis de performance com placa de impulso fictícia e geometria desenvolvida para velocidade.",
-    img: "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 115,
@@ -152,7 +152,7 @@ products.push(
     old: 729.9,
     tag: "-11%",
     desc: "Tênis versátil para academia com estabilidade, amortecimento e acabamento sofisticado.",
-    img: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 116,
@@ -162,7 +162,7 @@ products.push(
     old: null,
     tag: "Novo",
     desc: "Tênis esportivo urbano de perfil minimalista para rotina, caminhada e lifestyle.",
-    img: "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 117,
@@ -172,7 +172,7 @@ products.push(
     old: 699.9,
     tag: "-10%",
     desc: "Tênis de quadra fictício com suporte lateral, sola de alta aderência e visual clean.",
-    img: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 118,
@@ -182,7 +182,7 @@ products.push(
     old: null,
     tag: "Premium",
     desc: "Tênis outdoor fictício com proteção reforçada, tração elevada e estrutura resistente.",
-    img: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1514989940723-e8e5ef6ab5c4?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 119,
@@ -192,7 +192,7 @@ products.push(
     old: 579.9,
     tag: "-14%",
     desc: "Tênis leve para corrida e caminhada com conforto diário e design contemporâneo.",
-    img: "https://images.unsplash.com/photo-1556637640-2c80d3201be8?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1579338559194-a162d19bf842?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 120,
@@ -202,7 +202,7 @@ products.push(
     old: null,
     tag: "Novo",
     desc: "Tênis fictício para musculação com base estável, suporte firme e construção premium.",
-    img: "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 121,
@@ -212,7 +212,7 @@ products.push(
     old: null,
     tag: "Novo",
     desc: "Blusa de manga longa sem costura aparente, leve e respirável para treinos intensos.",
-    img: "https://images.unsplash.com/photo-1517832207067-4db24a2ae47c?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 122,
@@ -222,7 +222,7 @@ products.push(
     old: 419.9,
     tag: "-14%",
     desc: "Body esportivo de alto desempenho com modelagem anatômica e toque premium.",
-    img: "https://images.unsplash.com/photo-1518459031867-a89b944bffe4?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 123,
@@ -242,7 +242,7 @@ products.push(
     old: 269.9,
     tag: "-15%",
     desc: "Camiseta de corrida ultraleve com ventilação estratégica e secagem rápida.",
-    img: "https://images.unsplash.com/photo-1483721310020-03333e577078?auto=format&fit=crop&w=900&q=85",
+    img: "https://images.unsplash.com/photo-1502716119720-b23a93e5fb1b?auto=format&fit=crop&w=900&q=85",
   },
 );
 
