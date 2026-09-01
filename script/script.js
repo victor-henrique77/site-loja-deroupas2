@@ -215,7 +215,7 @@ const products = [
     old: 199.9,
     tag: "-15%",
     desc: "Top de alta sustentação com tecido respirável para treinos dinâmicos.",
-    img: productImage("Pulse Training Top", "top", "#e9dedf", "#713d48"),
+    img: "img/img_0389-5ef960b7850fb8493217482820211637-1024-1024.webp",
   },
   {
     id: 26,
@@ -225,7 +225,7 @@ const products = [
     old: 349.9,
     tag: "-14%",
     desc: "Legging de compressão equilibrada com cintura alta e acabamento premium.",
-    img: productImage("Sculpt Motion Legging", "legging", "#e4dfeb", "#49375c"),
+    img: "img/images.jpg",
   },
   {
     id: 27,
@@ -235,12 +235,7 @@ const products = [
     old: 469.9,
     tag: "-15%",
     desc: "Conjunto esportivo de ajuste confortável para academia e funcional.",
-    img: productImage(
-      "AeroForm Training Set",
-      "conjunto",
-      "#e2e7e4",
-      "#1b5746",
-    ),
+    img: "img/images(1).jpg"
   },
   {
     id: 28,
@@ -250,7 +245,7 @@ const products = [
     old: null,
     tag: "Novo",
     desc: "Jaqueta esportiva leve para aquecimento e atividades externas.",
-    img: productImage("Motion Flow Jacket", "jaqueta", "#ebe1dc", "#754b3e"),
+    img: "img/images(2).jpg",
   },
   {
     id: 29,
@@ -260,7 +255,7 @@ const products = [
     old: 219.9,
     tag: "-18%",
     desc: "Short de corrida leve com liberdade de movimento e bolso discreto.",
-    img: productImage("Elevate Running Shorts", "short", "#e5e5e2", "#2f3332"),
+    img: "img/images(3).jpg",
   },
   {
     id: 30,
@@ -270,7 +265,7 @@ const products = [
     old: null,
     tag: "Novo",
     desc: "Camiseta ultraleve com secagem rápida para corrida e cardio.",
-    img: productImage("AeroLite Running Tee", "camiseta", "#e0e8eb", "#24566a"),
+    img: "img/images(4).jpg",
   },
   {
     id: 31,
@@ -280,7 +275,7 @@ const products = [
     old: 319.9,
     tag: "-13%",
     desc: "Legging de alta elasticidade para yoga, pilates e mobilidade.",
-    img: productImage("Balance Yoga Legging", "legging", "#e5e1e7", "#4d4351"),
+    img: "img/images(5).jpg",
   },
   {
     id: 32,
@@ -290,7 +285,7 @@ const products = [
     old: null,
     tag: "Novo",
     desc: "Top esportivo estruturado para treino funcional e mobilidade.",
-    img: productImage("Motion Ribbed Top", "top", "#e9e1d8", "#64462f"),
+    img: "img/images(6).jpg",
   },
   {
     id: 33,
@@ -300,7 +295,7 @@ const products = [
     old: 239.9,
     tag: "-17%",
     desc: "Top de alta sustentação com construção confortável para impacto elevado.",
-    img: productImage("Aero Performance Bra", "top", "#e0e8e5", "#185443"),
+    img: "img/images(7).jpg",
   },
 ];
 
