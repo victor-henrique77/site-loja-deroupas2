@@ -235,7 +235,7 @@ const products = [
     old: 469.9,
     tag: "-15%",
     desc: "Conjunto esportivo de ajuste confortável para academia e funcional.",
-    img: "img/images(1).jpg"
+    img: "img/images (1).jpg"
   },
   {
     id: 28,
@@ -245,7 +245,7 @@ const products = [
     old: null,
     tag: "Novo",
     desc: "Jaqueta esportiva leve para aquecimento e atividades externas.",
-    img: "img/images(2).jpg",
+    img: "img/images (2).jpg",
   },
   {
     id: 29,
@@ -255,7 +255,7 @@ const products = [
     old: 219.9,
     tag: "-18%",
     desc: "Short de corrida leve com liberdade de movimento e bolso discreto.",
-    img: "img/images(3).jpg",
+    img: "img/images (3).jpg",
   },
   {
     id: 30,
@@ -265,7 +265,7 @@ const products = [
     old: null,
     tag: "Novo",
     desc: "Camiseta ultraleve com secagem rápida para corrida e cardio.",
-    img: "img/images(4).jpg",
+    img: "img/images (4).jpg",
   },
   {
     id: 31,
@@ -275,7 +275,7 @@ const products = [
     old: 319.9,
     tag: "-13%",
     desc: "Legging de alta elasticidade para yoga, pilates e mobilidade.",
-    img: "img/images(5).jpg",
+    img: "img/images (5).jpg",
   },
   {
     id: 32,
@@ -285,7 +285,7 @@ const products = [
     old: null,
     tag: "Novo",
     desc: "Top esportivo estruturado para treino funcional e mobilidade.",
-    img: "img/images(6).jpg",
+    img: "img/images (6).jpg",
   },
   {
     id: 33,
@@ -295,7 +295,7 @@ const products = [
     old: 239.9,
     tag: "-17%",
     desc: "Top de alta sustentação com construção confortável para impacto elevado.",
-    img: "img/images(7).jpg",
+    img: "img/images (7).jpg",
   },
 ];
 
