@@ -1,102 +1,570 @@
 const productImage = (name, type, tone, accent) => {
   const icons = {
-    tenis: 'M145 285 C185 230 250 205 335 215 C410 224 455 265 505 300 L565 340 C590 357 584 390 552 397 L245 397 C188 397 137 369 125 333 C119 314 128 298 145 285Z',
-    camiseta: 'M205 150 L285 115 L350 145 L415 115 L495 150 L455 255 L425 238 L425 420 L215 420 L215 238 L185 255Z',
-    short: 'M215 145 L485 145 L470 285 L380 285 L350 225 L320 285 L230 285Z',
-    legging: 'M235 130 L465 130 L450 250 L420 425 L345 425 L330 265 L315 425 L240 425 L210 250Z',
-    jaqueta: 'M220 135 L290 110 L350 145 L410 110 L480 135 L445 240 L405 220 L405 425 L295 425 L295 220 L255 240Z',
-    top: 'M230 165 L285 120 L350 145 L415 120 L470 165 L445 300 L255 300Z',
-    moletom: 'M210 155 L285 115 L350 145 L415 115 L490 155 L455 250 L420 230 L420 425 L280 425 L280 230 L245 250Z',
-    conjunto: 'M220 130 L285 105 L350 135 L415 105 L480 130 L450 245 L400 225 L400 285 L465 285 L445 425 L350 410 L255 425 L235 285 L300 285 L300 225 L250 245Z'
+    tenis:
+      "M145 285 C185 230 250 205 335 215 C410 224 455 265 505 300 L565 340 C590 357 584 390 552 397 L245 397 C188 397 137 369 125 333 C119 314 128 298 145 285Z",
+    camiseta:
+      "M205 150 L285 115 L350 145 L415 115 L495 150 L455 255 L425 238 L425 420 L215 420 L215 238 L185 255Z",
+    short: "M215 145 L485 145 L470 285 L380 285 L350 225 L320 285 L230 285Z",
+    legging:
+      "M235 130 L465 130 L450 250 L420 425 L345 425 L330 265 L315 425 L240 425 L210 250Z",
+    jaqueta:
+      "M220 135 L290 110 L350 145 L410 110 L480 135 L445 240 L405 220 L405 425 L295 425 L295 220 L255 240Z",
+    top: "M230 165 L285 120 L350 145 L415 120 L470 165 L445 300 L255 300Z",
+    moletom:
+      "M210 155 L285 115 L350 145 L415 115 L490 155 L455 250 L420 230 L420 425 L280 425 L280 230 L245 250Z",
+    conjunto:
+      "M220 130 L285 105 L350 135 L415 105 L480 130 L450 245 L400 225 L400 285 L465 285 L445 425 L350 410 L255 425 L235 285 L300 285 L300 225 L250 245Z",
   };
   const path = icons[type] || icons.camiseta;
-  const safe = name.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const safe = name
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 560"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="${tone}"/><stop offset="1" stop-color="#f4f1ec"/></linearGradient><linearGradient id="item" x1="0" y1="0" x2="1" y2="1"><stop stop-color="${accent}"/><stop offset="1" stop-color="#151515"/></linearGradient><filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-opacity=".18"/></filter></defs><rect width="700" height="560" rx="34" fill="url(#bg)"/><circle cx="580" cy="90" r="120" fill="#fff" opacity=".45"/><ellipse cx="350" cy="438" rx="230" ry="28" fill="#000" opacity=".08"/><path d="${path}" fill="url(#item)" filter="url(#shadow)"/><path d="M275 175 H425" stroke="#fff" stroke-width="8" opacity=".18"/><text x="38" y="48" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#171514" letter-spacing="3">CLIMAX / PERFORMANCE</text><text x="38" y="512" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#171514">${safe}</text><text x="38" y="536" font-family="Arial,sans-serif" font-size="12" fill="#6c6966">PREMIUM SPORTS COLLECTION</text></svg>`;
-  return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+  return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
 };
 
 const products = [
-  {id:1,name:'Apex Runner X1',cat:'Calçados',price:699.9,old:799.9,tag:'-13%',desc:'Tênis premium de corrida com amortecimento responsivo e cabedal respirável.',img:productImage('Apex Runner X1','tenis','#dfe9e4','#163d33')},
-  {id:2,name:'Velocity Carbon Pro',cat:'Calçados',price:899.9,old:999.9,tag:'-10%',desc:'Tênis de performance fictício com placa de propulsão e construção ultraleve.',img:productImage('Velocity Carbon Pro','tenis','#e8e2d8','#25211e')},
-  {id:3,name:'Pulse Trainer Elite',cat:'Calçados',price:649.9,old:749.9,tag:'Oferta',desc:'Treinador premium para academia com estabilidade e amortecimento equilibrado.',img:productImage('Pulse Trainer Elite','tenis','#e0e7eb','#1d3948')},
-  {id:4,name:'Aero Court Premium',cat:'Calçados',price:619.9,old:699.9,tag:'-11%',desc:'Tênis de quadra com suporte lateral e sola de alta aderência.',img:productImage('Aero Court Premium','tenis','#eee4d8','#5c3723')},
-  {id:5,name:'Endurance Trail Pro',cat:'Calçados',price:749.9,old:null,tag:'Novo',desc:'Tênis para trilhas com proteção reforçada e tração em terrenos variados.',img:productImage('Endurance Trail Pro','tenis','#e3e7dc','#35452b')},
-  {id:6,name:'FlexRun Essential',cat:'Calçados',price:429.9,old:499.9,tag:'-14%',desc:'Modelo leve e flexível para caminhada, cardio e corrida recreativa.',img:productImage('FlexRun Essential','tenis','#e6e0ed','#43314f')},
-  {id:7,name:'Gravity Lift Trainer',cat:'Calçados',price:559.9,old:null,tag:'Novo',desc:'Tênis de academia com base firme para exercícios de força e estabilidade.',img:productImage('Gravity Lift Trainer','tenis','#e1e0de','#30302e')},
-  {id:8,name:'Apex Cross Trainer',cat:'Calçados',price:679.9,old:759.9,tag:'-11%',desc:'Tênis para treino híbrido com estabilidade multidirecional e resposta rápida.',img:productImage('Apex Cross Trainer','tenis','#dfe8e8','#204a4b')},
-  {id:9,name:'Sprint Flow Carbon',cat:'Calçados',price:949.9,old:1099.9,tag:'-14%',desc:'Modelo fictício de competição com placa rígida e geometria de alta velocidade.',img:productImage('Sprint Flow Carbon','tenis','#e7e4de','#171717')},
-  {id:10,name:'Terra Grip Pro',cat:'Calçados',price:729.9,old:null,tag:'Novo',desc:'Tênis outdoor premium com sola de alta tração para trilhas e aventura.',img:productImage('Terra Grip Pro','tenis','#e6e0d6','#3e3327')},
-  {id:11,name:'Court Motion Elite',cat:'Calçados',price:599.9,old:679.9,tag:'-12%',desc:'Calçado esportivo de quadra com suporte, leveza e aderência premium.',img:productImage('Court Motion Elite','tenis','#e3e9ed','#263b49')},
-  {id:12,name:'Recovery Foam One',cat:'Calçados',price:489.9,old:null,tag:'Novo',desc:'Tênis confortável para recuperação e uso pós-treino com espuma macia.',img:productImage('Recovery Foam One','tenis','#e8e1d7','#604735')},
+  {
+    id: 1,
+    name: "Apex Runner X1",
+    cat: "Calçados",
+    price: 699.9,
+    old: 799.9,
+    tag: "-13%",
+    desc: "Tênis premium de corrida com amortecimento responsivo e cabedal respirável.",
+    img: "img/0001.jpg",
+  },
+  {
+    id: 2,
+    name: "Velocity Carbon Pro",
+    cat: "Calçados",
+    price: 899.9,
+    old: 999.9,
+    tag: "-10%",
+    desc: "Tênis de performance fictício com placa de propulsão e construção ultraleve.",
+    img: "img/0002.jpg",
+  },
+  {
+    id: 3,
+    name: "Pulse Trainer Elite",
+    cat: "Calçados",
+    price: 649.9,
+    old: 749.9,
+    tag: "Oferta",
+    desc: "Treinador premium para academia com estabilidade e amortecimento equilibrado.",
+    img: "img/0003.jpg",
+  },
+  {
+    id: 4,
+    name: "Aero Court Premium",
+    cat: "Calçados",
+    price: 619.9,
+    old: 699.9,
+    tag: "-11%",
+    desc: "Tênis de quadra com suporte lateral e sola de alta aderência.",
+    img: productImage("Aero Court Premium", "tenis", "#eee4d8", "#5c3723"),
+  },
+  {
+    id: 5,
+    name: "Endurance Trail Pro",
+    cat: "Calçados",
+    price: 749.9,
+    old: null,
+    tag: "Novo",
+    desc: "Tênis para trilhas com proteção reforçada e tração em terrenos variados.",
+    img: productImage("Endurance Trail Pro", "tenis", "#e3e7dc", "#35452b"),
+  },
+  {
+    id: 6,
+    name: "FlexRun Essential",
+    cat: "Calçados",
+    price: 429.9,
+    old: 499.9,
+    tag: "-14%",
+    desc: "Modelo leve e flexível para caminhada, cardio e corrida recreativa.",
+    img: productImage("FlexRun Essential", "tenis", "#e6e0ed", "#43314f"),
+  },
+  {
+    id: 13,
+    name: "AeroFlex Pro Tee",
+    cat: "Masculino",
+    price: 189.9,
+    old: 229.9,
+    tag: "-17%",
+    desc: "Camiseta técnica de secagem rápida com tecido leve e respirável.",
+    img: "img/01.png",
+  },
+  {
+    id: 14,
+    name: "Impact Training Tee",
+    cat: "Masculino",
+    price: 199.9,
+    old: 239.9,
+    tag: "-17%",
+    desc: "Camiseta técnica premium para musculação e treinos funcionais.",
+    img: "img/02.png",
+  },
+  {
+    id: 15,
+    name: "Motion Compression Tee",
+    cat: "Masculino",
+    price: 229.9,
+    old: null,
+    tag: "Novo",
+    desc: "Camiseta de compressão com ajuste anatômico e toque suave.",
+    img: "img/03.png",
+  },
+  {
+    id: 16,
+    name: "Velocity Tech Shorts",
+    cat: "Masculino",
+    price: 179.9,
+    old: null,
+    tag: "Novo",
+    desc: "Short esportivo leve com mobilidade elevada e bolso seguro.",
+    img: "img/04.png",
+  },
+  {
+    id: 17,
+    name: "ProForm Training Short",
+    cat: "Masculino",
+    price: 189.9,
+    old: 219.9,
+    tag: "-14%",
+    desc: "Short técnico elástico pensado para mobilidade durante o treino.",
+    img: "img/05.png",
+  },
+  {
+    id: 18,
+    name: "Core Motion Pants",
+    cat: "Masculino",
+    price: 269.9,
+    old: null,
+    tag: "Novo",
+    desc: "Calça de treino premium com elasticidade e acabamento minimalista.",
+    img: "img/06.png",
+  },
+  {
+    id: 19,
+    name: "Velocity Track Pants",
+    cat: "Masculino",
+    price: 289.9,
+    old: null,
+    tag: "Novo",
+    desc: "Calça esportiva de corte moderno para aquecimento e treinamento.",
+    img: "img/07.png",
+  },
+  {
+    id: 20,
+    name: "Apex Training Jacket",
+    cat: "Masculino",
+    price: 389.9,
+    old: 449.9,
+    tag: "-13%",
+    desc: "Jaqueta leve para aquecimento com corte esportivo contemporâneo.",
+    img: "img/08.jpg",
+  },
+  {
+    id: 21,
+    name: "Performance Windbreaker",
+    cat: "Masculino",
+    price: 379.9,
+    old: 439.9,
+    tag: "-14%",
+    desc: "Corta-vento esportivo leve para corrida e atividades ao ar livre.",
+    img: "img/09.jpg",
+  },
+  ,
+  {
+    id: 22,
+    name: "Aero Seamless Longsleeve",
+    cat: "Masculino",
+    price: 219.9,
+    old: 259.9,
+    tag: "-15%",
+    desc: "Blusa esportiva de manga longa sem excesso de costuras.",
+    img: "img/10.jpg",
+  },
+  {
+    id: 23,
+    name: "AeroWarm Training Hoodie",
+    cat: "Masculino",
+    price: 349.9,
+    old: 399.9,
+    tag: "-12%",
+    desc: "Moletom técnico macio para aquecimento, recuperação e dias frios.",
+    img: "img/11.webp",
+  },
+  {
+    id: 24,
+    name: "Active Mesh Tank",
+    cat: "Masculino",
+    price: 159.9,
+    old: null,
+    tag: "Novo",
+    desc: "Regata esportiva de alta ventilação para musculação e cardio.",
+    img: "img/12.webp",
+  },
 
-  {id:13,name:'AeroFlex Pro Tee',cat:'Masculino',price:189.9,old:229.9,tag:'-17%',desc:'Camiseta técnica de secagem rápida com tecido leve e respirável.',img:productImage('AeroFlex Pro Tee','camiseta','#e2e8e5','#0d5b49')},
-  {id:14,name:'Impact Training Tee',cat:'Masculino',price:199.9,old:239.9,tag:'-17%',desc:'Camiseta técnica premium para musculação e treinos funcionais.',img:productImage('Impact Training Tee','camiseta','#e5e3df','#252525')},
-  {id:15,name:'Motion Compression Tee',cat:'Masculino',price:229.9,old:null,tag:'Novo',desc:'Camiseta de compressão com ajuste anatômico e toque suave.',img:productImage('Motion Compression Tee','camiseta','#dfe5eb','#193d57')},
-  {id:16,name:'Velocity Tech Shorts',cat:'Masculino',price:179.9,old:null,tag:'Novo',desc:'Short esportivo leve com mobilidade elevada e bolso seguro.',img:productImage('Velocity Tech Shorts','short','#e6e1d9','#543b2c')},
-  {id:17,name:'ProForm Training Short',cat:'Masculino',price:189.9,old:219.9,tag:'-14%',desc:'Short técnico elástico pensado para mobilidade durante o treino.',img:productImage('ProForm Training Short','short','#e0e6e3','#194d40')},
-  {id:18,name:'Core Motion Pants',cat:'Masculino',price:269.9,old:null,tag:'Novo',desc:'Calça de treino premium com elasticidade e acabamento minimalista.',img:productImage('Core Motion Pants','legging','#e1e2e0','#272827')},
-  {id:19,name:'Velocity Track Pants',cat:'Masculino',price:289.9,old:null,tag:'Novo',desc:'Calça esportiva de corte moderno para aquecimento e treinamento.',img:productImage('Velocity Track Pants','legging','#e3e8e9','#27404a')},
-  {id:20,name:'Apex Training Jacket',cat:'Masculino',price:389.9,old:449.9,tag:'-13%',desc:'Jaqueta leve para aquecimento com corte esportivo contemporâneo.',img:productImage('Apex Training Jacket','jaqueta','#e4dfd8','#403228')},
-  {id:21,name:'Performance Windbreaker',cat:'Masculino',price:379.9,old:439.9,tag:'-14%',desc:'Corta-vento esportivo leve para corrida e atividades ao ar livre.',img:productImage('Performance Windbreaker','jaqueta','#dfe8e4','#165445')},
-  {id:22,name:'Aero Seamless Longsleeve',cat:'Masculino',price:219.9,old:259.9,tag:'-15%',desc:'Blusa esportiva de manga longa sem excesso de costuras.',img:productImage('Aero Seamless Longsleeve','camiseta','#e6e2eb','#43344e')},
-  {id:23,name:'AeroWarm Training Hoodie',cat:'Masculino',price:349.9,old:399.9,tag:'-12%',desc:'Moletom técnico macio para aquecimento, recuperação e dias frios.',img:productImage('AeroWarm Training Hoodie','moletom','#e5e1dc','#392c25')},
-  {id:24,name:'Active Mesh Tank',cat:'Masculino',price:159.9,old:null,tag:'Novo',desc:'Regata esportiva de alta ventilação para musculação e cardio.',img:productImage('Active Mesh Tank','top','#e1e9e7','#155647')},
-
-  {id:25,name:'Pulse Training Top',cat:'Feminino',price:169.9,old:199.9,tag:'-15%',desc:'Top de alta sustentação com tecido respirável para treinos dinâmicos.',img:productImage('Pulse Training Top','top','#e9dedf','#713d48')},
-  {id:26,name:'Sculpt Motion Legging',cat:'Feminino',price:299.9,old:349.9,tag:'-14%',desc:'Legging de compressão equilibrada com cintura alta e acabamento premium.',img:productImage('Sculpt Motion Legging','legging','#e4dfeb','#49375c')},
-  {id:27,name:'AeroForm Training Set',cat:'Feminino',price:399.9,old:469.9,tag:'-15%',desc:'Conjunto esportivo de ajuste confortável para academia e funcional.',img:productImage('AeroForm Training Set','conjunto','#e2e7e4','#1b5746')},
-  {id:28,name:'Motion Flow Jacket',cat:'Feminino',price:369.9,old:null,tag:'Novo',desc:'Jaqueta esportiva leve para aquecimento e atividades externas.',img:productImage('Motion Flow Jacket','jaqueta','#ebe1dc','#754b3e')},
-  {id:29,name:'Elevate Running Shorts',cat:'Feminino',price:179.9,old:219.9,tag:'-18%',desc:'Short de corrida leve com liberdade de movimento e bolso discreto.',img:productImage('Elevate Running Shorts','short','#e5e5e2','#2f3332')},
-  {id:30,name:'AeroLite Running Tee',cat:'Feminino',price:159.9,old:null,tag:'Novo',desc:'Camiseta ultraleve com secagem rápida para corrida e cardio.',img:productImage('AeroLite Running Tee','camiseta','#e0e8eb','#24566a')},
-  {id:31,name:'Balance Yoga Legging',cat:'Feminino',price:279.9,old:319.9,tag:'-13%',desc:'Legging de alta elasticidade para yoga, pilates e mobilidade.',img:productImage('Balance Yoga Legging','legging','#e5e1e7','#4d4351')},
-  {id:32,name:'Motion Ribbed Top',cat:'Feminino',price:149.9,old:null,tag:'Novo',desc:'Top esportivo estruturado para treino funcional e mobilidade.',img:productImage('Motion Ribbed Top','top','#e9e1d8','#64462f')},
-  {id:33,name:'Aero Performance Bra',cat:'Feminino',price:199.9,old:239.9,tag:'-17%',desc:'Top de alta sustentação com construção confortável para impacto elevado.',img:productImage('Aero Performance Bra','top','#e0e8e5','#185443')},
-  {id:34,name:'Sculpt Pro Bodysuit',cat:'Feminino',price:289.9,old:339.9,tag:'-15%',desc:'Body esportivo de ajuste anatômico para treinos de alta mobilidade.',img:productImage('Sculpt Pro Bodysuit','conjunto','#e6dfe5','#5a354d')},
-  {id:35,name:'Luxe Training Sweatshirt',cat:'Feminino',price:329.9,old:null,tag:'Novo',desc:'Moletom esportivo premium de toque macio para aquecimento.',img:productImage('Luxe Training Sweatshirt','moletom','#e8e2dc','#44372e')},
-  {id:36,name:'Flow Active Shorts',cat:'Feminino',price:169.9,old:199.9,tag:'-15%',desc:'Short técnico de cintura confortável para corrida e treinamento.',img:productImage('Flow Active Shorts','short','#e1e7e6','#274f50')},
-  {id:37,name:'Flex Studio Set',cat:'Feminino',price:379.9,old:429.9,tag:'-12%',desc:'Conjunto premium para pilates, funcional, yoga e mobilidade.',img:productImage('Flex Studio Set','conjunto','#e9e0dc','#68483d')},
-
-  {id:38,name:'Aero Recovery Tee',cat:'Masculino',price:179.9,old:null,tag:'Novo',desc:'Camiseta macia para recuperação e aquecimento com corte esportivo.',img:productImage('Aero Recovery Tee','camiseta','#e0e5e7','#344d59')},
-  {id:39,name:'Elite Compression Legging',cat:'Feminino',price:319.9,old:369.9,tag:'-13%',desc:'Legging de compressão premium para corrida e treinamento intenso.',img:productImage('Elite Compression Legging','legging','#e4e1e4','#302c39')},
-  {id:40,name:'Sprint Performance Tank',cat:'Masculino',price:169.9,old:199.9,tag:'-15%',desc:'Regata técnica ultraleve para corrida, funcional e academia.',img:productImage('Sprint Performance Tank','top','#e0e9e5','#0f5544')},
-  {id:41,name:'Core Training Set',cat:'Masculino',price:349.9,old:399.9,tag:'-12%',desc:'Conjunto esportivo técnico para treinos de força e condicionamento.',img:productImage('Core Training Set','conjunto','#e5e3df','#272522')},
-  {id:42,name:'Aero Mobility Jacket',cat:'Feminino',price:359.9,old:null,tag:'Novo',desc:'Jaqueta leve com liberdade de movimento para aquecimento e corrida.',img:productImage('Aero Mobility Jacket','jaqueta','#e2e9e7','#20564a')},
-  {id:43,name:'Velocity Training Tee',cat:'Masculino',price:189.9,old:null,tag:'Novo',desc:'Camiseta de performance com ventilação estratégica para treinos intensos.',img:productImage('Velocity Training Tee','camiseta','#e8e0df','#5e3032')},
-  {id:44,name:'Sculpt Active Set',cat:'Feminino',price:389.9,old:449.9,tag:'-13%',desc:'Conjunto esportivo premium com ajuste anatômico para treino funcional.',img:productImage('Sculpt Active Set','conjunto','#e3e6ea','#263e5a')},
-  {id:45,name:'Endurance Base Layer',cat:'Masculino',price:239.9,old:279.9,tag:'-14%',desc:'Segunda pele técnica para corrida e atividades de alta intensidade.',img:productImage('Endurance Base Layer','camiseta','#e0e5e4','#183f3b')},
-  {id:46,name:'Motion Training Crop',cat:'Feminino',price:179.9,old:null,tag:'Novo',desc:'Top cropped esportivo com suporte e construção respirável.',img:productImage('Motion Training Crop','top','#e8dfdf','#653b45')},
-  {id:47,name:'Titan Strength Short',cat:'Masculino',price:199.9,old:239.9,tag:'-17%',desc:'Short premium para musculação com estrutura leve e resistente.',img:productImage('Titan Strength Short','short','#e2e1df','#292a28')},
-  {id:48,name:'Aero Run Shorts',cat:'Feminino',price:189.9,old:219.9,tag:'-14%',desc:'Short de corrida com tecido leve, respirável e secagem rápida.',img:productImage('Aero Run Shorts','short','#e2e8e8','#245051')}
+  {
+    id: 25,
+    name: "Pulse Training Top",
+    cat: "Feminino",
+    price: 169.9,
+    old: 199.9,
+    tag: "-15%",
+    desc: "Top de alta sustentação com tecido respirável para treinos dinâmicos.",
+    img: productImage("Pulse Training Top", "top", "#e9dedf", "#713d48"),
+  },
+  {
+    id: 26,
+    name: "Sculpt Motion Legging",
+    cat: "Feminino",
+    price: 299.9,
+    old: 349.9,
+    tag: "-14%",
+    desc: "Legging de compressão equilibrada com cintura alta e acabamento premium.",
+    img: productImage("Sculpt Motion Legging", "legging", "#e4dfeb", "#49375c"),
+  },
+  {
+    id: 27,
+    name: "AeroForm Training Set",
+    cat: "Feminino",
+    price: 399.9,
+    old: 469.9,
+    tag: "-15%",
+    desc: "Conjunto esportivo de ajuste confortável para academia e funcional.",
+    img: productImage(
+      "AeroForm Training Set",
+      "conjunto",
+      "#e2e7e4",
+      "#1b5746",
+    ),
+  },
+  {
+    id: 28,
+    name: "Motion Flow Jacket",
+    cat: "Feminino",
+    price: 369.9,
+    old: null,
+    tag: "Novo",
+    desc: "Jaqueta esportiva leve para aquecimento e atividades externas.",
+    img: productImage("Motion Flow Jacket", "jaqueta", "#ebe1dc", "#754b3e"),
+  },
+  {
+    id: 29,
+    name: "Elevate Running Shorts",
+    cat: "Feminino",
+    price: 179.9,
+    old: 219.9,
+    tag: "-18%",
+    desc: "Short de corrida leve com liberdade de movimento e bolso discreto.",
+    img: productImage("Elevate Running Shorts", "short", "#e5e5e2", "#2f3332"),
+  },
+  {
+    id: 30,
+    name: "AeroLite Running Tee",
+    cat: "Feminino",
+    price: 159.9,
+    old: null,
+    tag: "Novo",
+    desc: "Camiseta ultraleve com secagem rápida para corrida e cardio.",
+    img: productImage("AeroLite Running Tee", "camiseta", "#e0e8eb", "#24566a"),
+  },
+  {
+    id: 31,
+    name: "Balance Yoga Legging",
+    cat: "Feminino",
+    price: 279.9,
+    old: 319.9,
+    tag: "-13%",
+    desc: "Legging de alta elasticidade para yoga, pilates e mobilidade.",
+    img: productImage("Balance Yoga Legging", "legging", "#e5e1e7", "#4d4351"),
+  },
+  {
+    id: 32,
+    name: "Motion Ribbed Top",
+    cat: "Feminino",
+    price: 149.9,
+    old: null,
+    tag: "Novo",
+    desc: "Top esportivo estruturado para treino funcional e mobilidade.",
+    img: productImage("Motion Ribbed Top", "top", "#e9e1d8", "#64462f"),
+  },
+  {
+    id: 33,
+    name: "Aero Performance Bra",
+    cat: "Feminino",
+    price: 199.9,
+    old: 239.9,
+    tag: "-17%",
+    desc: "Top de alta sustentação com construção confortável para impacto elevado.",
+    img: productImage("Aero Performance Bra", "top", "#e0e8e5", "#185443"),
+  },
 ];
 
-let currentPage='home',category='Todos',query='',cart=[],favorites=new Set(),selected=null;
-const money=v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
-const navItems=['Início','Masculino','Feminino','Calçados','Promoções','Carrinho'];
-function goToPage(page){currentPage=page;const home=document.querySelector('#home'),shop=document.querySelector('#shop');if(page==='home'){home.style.display='';shop.style.display='none';window.scrollTo(0,0)}else{home.style.display='none';shop.style.display='';window.scrollTo(0,0)}}
-function goToCategory(cat){goToPage('shop');setCategory(cat)}
-const nav=document.querySelector('#nav');nav.innerHTML=navItems.map(x=>`<button class="nav-btn" data-nav="${x}">${x}</button>`).join('');
-['Todos','Masculino','Feminino','Calçados','Promoções'].forEach(x=>{const b=document.createElement('button');b.textContent=x;b.dataset.cat=x;document.querySelector('#filters').appendChild(b)});
-function setCategory(c){category=c;document.querySelectorAll('#filters button').forEach(b=>b.classList.toggle('active',b.dataset.cat===c));document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.nav===c));render()}
-function filtered(){let arr=products.filter(p=>category==='Todos'||p.cat===category||(category==='Promoções'&&p.old));if(query)arr=arr.filter(p=>(p.name+' '+p.cat+' '+p.desc).toLowerCase().includes(query.toLowerCase()));const s=document.querySelector('#sort').value;if(s==='low')arr.sort((a,b)=>a.price-b.price);if(s==='high')arr.sort((a,b)=>b.price-a.price);return arr}
-function renderCard(p){return `<article class="card" data-id="${p.id}"><div class="photo"><img src="${p.img}" alt="${p.name}" loading="lazy"><span class="tag">${p.tag}</span><button class="heart ${favorites.has(p.id)?'liked':''}" data-fav="${p.id}" aria-label="Favoritar"><svg width="18" height="18" viewBox="0 0 24 24" fill="${favorites.has(p.id)?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button></div><div class="card-body"><div class="category">${p.cat}</div><h3>${p.name}</h3><div class="desc">${p.desc}</div><div class="price-row"><div class="price">${money(p.price)}${p.old?`<span class="old">${money(p.old)}</span>`:''}</div><button class="add" data-add="${p.id}">Adicionar</button></div></div></article>`}
-function render(){const arr=filtered();document.querySelector('#count').textContent=`${arr.length} ${arr.length===1?'produto':'produtos'}`;document.querySelector('#grid').innerHTML=arr.length?arr.map(renderCard).join(''):`<div class="empty" style="grid-column:1/-1">Nenhum produto encontrado.<br>Tente outra busca ou categoria.</div>`}
-function renderFeaturedProducts(){document.querySelector('#featuredGrid').innerHTML=products.slice(0,4).map(renderCard).join('')}
-function add(id){const item=cart.find(x=>x.id===id);item?item.qty++:cart.push({id,qty:1});updateCart();toast('Produto adicionado ao carrinho')}
-function updateCart(){document.querySelector('#cartBadge').textContent=cart.reduce((s,x)=>s+x.qty,0);const list=document.querySelector('#cartList');let total=0;if(!cart.length)list.innerHTML='<div class="empty">Seu carrinho está vazio.</div>';else{list.innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);total+=p.price*i.qty;return `<div class="cart-item"><img src="${p.img}" alt="${p.name}"><div><h4>${p.name}</h4><p>${money(p.price)}</p><div class="qty"><button data-minus="${p.id}">−</button><span>${i.qty}</span><button data-plus="${p.id}">+</button></div></div><button class="remove" data-remove="${p.id}">Remover</button></div>`}).join('')}document.querySelector('#total').textContent=money(total);document.querySelector('#checkout').disabled=!cart.length}
-function openModal(id){selected=products.find(p=>p.id===id);document.querySelector('#modalImg').src=selected.img;document.querySelector('#modalImg').alt=selected.name;document.querySelector('#modalCat').textContent=selected.cat;document.querySelector('#modalTitle').textContent=selected.name;document.querySelector('#modalDesc').textContent=selected.desc;document.querySelector('#modalPrice').innerHTML=money(selected.price)+(selected.old?` <span class="old">${money(selected.old)}</span>`:'');const favBtn=document.querySelector('#modalFav'),favText=favBtn.querySelector('#favText');if(favorites.has(id)){favBtn.classList.add('liked');favText.textContent='Favoritado'}else{favBtn.classList.remove('liked');favText.textContent='Favoritar'}document.querySelector('#modalOverlay').classList.add('open')}
-function toast(msg){const t=document.querySelector('#toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
-document.addEventListener('click',e=>{const addBtn=e.target.closest('[data-add]'),fav=e.target.closest('[data-fav]'),card=e.target.closest('.card');if(addBtn){e.stopPropagation();add(+addBtn.dataset.add);return}if(fav){e.stopPropagation();const id=+fav.dataset.fav;favorites.has(id)?favorites.delete(id):favorites.add(id);render();renderFeaturedProducts();return}if(card)openModal(+card.dataset.id);if(e.target.closest('[data-plus]')){const id=+e.target.closest('[data-plus]').dataset.plus;cart.find(x=>x.id===id).qty++;updateCart()}if(e.target.closest('[data-minus]')){const id=+e.target.closest('[data-minus]').dataset.minus;const x=cart.find(i=>i.id===id);x.qty--;if(x.qty<=0)cart=cart.filter(i=>i.id!==id);updateCart()}if(e.target.closest('[data-remove]')){const id=+e.target.closest('[data-remove]').dataset.remove;cart=cart.filter(i=>i.id!==id);updateCart()}if(e.target.closest('[data-nav]')){const n=e.target.closest('[data-nav]').dataset.nav;if(n==='Carrinho')document.querySelector('#drawer').classList.add('open');else if(n==='Início'){goToPage('home');category='Todos'}else goToCategory(n)}if(e.target.dataset.section==='home'){e.preventDefault();goToPage('home')}if(e.target.dataset.category){e.preventDefault();goToCategory(e.target.dataset.category)}const catCard=e.target.closest('.category-card');if(catCard)goToCategory(catCard.dataset.category)});
-document.querySelector('#filters').addEventListener('click',e=>{if(e.target.dataset.cat)setCategory(e.target.dataset.cat)});
-document.querySelector('#search').addEventListener('input',e=>{query=e.target.value;render()});
-document.querySelector('#sort').addEventListener('change',render);
-document.querySelector('#cartBtn').onclick=()=>document.querySelector('#drawer').classList.add('open');
-document.querySelector('#drawerClose').onclick=()=>document.querySelector('#drawer').classList.remove('open');
-document.querySelector('#modalClose').onclick=()=>document.querySelector('#modalOverlay').classList.remove('open');
-document.querySelector('#modalOverlay').addEventListener('click',e=>{if(e.target.id==='modalOverlay')e.currentTarget.classList.remove('open')});
-document.querySelector('#favBtn').onclick=()=>{goToPage('shop');query='';category='Todos';render();toast(`${favorites.size} favorito(s) selecionado(s)`);setTimeout(()=>document.querySelector('#grid').scrollIntoView({behavior:'smooth'}),100)};
-document.querySelector('#modalAdd').onclick=()=>{add(selected.id);document.querySelector('#modalOverlay').classList.remove('open')};
-document.querySelector('#modalFav').onclick=()=>{favorites.has(selected.id)?favorites.delete(selected.id):favorites.add(selected.id);openModal(selected.id);render();renderFeaturedProducts()};
-document.querySelector('#checkout').onclick=()=>{if(!cart.length)return;cart=[];updateCart();document.querySelector('#drawer').classList.remove('open');toast('Pedido realizado com sucesso! Obrigado pela compra.')};
-document.querySelector('#btnShopNow').onclick=()=>goToCategory('Todos');document.querySelector('#btnViewCollection').onclick=()=>goToCategory('Todos');document.querySelector('#btnStartShopping').onclick=()=>goToCategory('Todos');
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelector('#modalOverlay').classList.remove('open');document.querySelector('#drawer').classList.remove('open')}});
-function init(){goToPage('home');setCategory('Todos');updateCart();renderFeaturedProducts()}init();
+let currentPage = "home",
+  category = "Todos",
+  query = "",
+  cart = [],
+  favorites = new Set(),
+  selected = null;
+const money = (v) =>
+  v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+const navItems = [
+  "Início",
+  "Masculino",
+  "Feminino",
+  "Calçados",
+  "Promoções",
+  "Carrinho",
+];
+function goToPage(page) {
+  currentPage = page;
+  const home = document.querySelector("#home"),
+    shop = document.querySelector("#shop");
+  if (page === "home") {
+    home.style.display = "";
+    shop.style.display = "none";
+    window.scrollTo(0, 0);
+  } else {
+    home.style.display = "none";
+    shop.style.display = "";
+    window.scrollTo(0, 0);
+  }
+}
+function goToCategory(cat) {
+  goToPage("shop");
+  setCategory(cat);
+}
+const nav = document.querySelector("#nav");
+nav.innerHTML = navItems
+  .map((x) => `<button class="nav-btn" data-nav="${x}">${x}</button>`)
+  .join("");
+["Todos", "Masculino", "Feminino", "Calçados", "Promoções"].forEach((x) => {
+  const b = document.createElement("button");
+  b.textContent = x;
+  b.dataset.cat = x;
+  document.querySelector("#filters").appendChild(b);
+});
+function setCategory(c) {
+  category = c;
+  document
+    .querySelectorAll("#filters button")
+    .forEach((b) => b.classList.toggle("active", b.dataset.cat === c));
+  document
+    .querySelectorAll(".nav-btn")
+    .forEach((b) => b.classList.toggle("active", b.dataset.nav === c));
+  render();
+}
+function filtered() {
+  let arr = products.filter(
+    (p) =>
+      category === "Todos" ||
+      p.cat === category ||
+      (category === "Promoções" && p.old),
+  );
+  if (query)
+    arr = arr.filter((p) =>
+      (p.name + " " + p.cat + " " + p.desc)
+        .toLowerCase()
+        .includes(query.toLowerCase()),
+    );
+  const s = document.querySelector("#sort").value;
+  if (s === "low") arr.sort((a, b) => a.price - b.price);
+  if (s === "high") arr.sort((a, b) => b.price - a.price);
+  return arr;
+}
+function renderCard(p) {
+  return `<article class="card" data-id="${p.id}"><div class="photo"><img src="${p.img}" alt="${p.name}" loading="lazy"><span class="tag">${p.tag}</span><button class="heart ${favorites.has(p.id) ? "liked" : ""}" data-fav="${p.id}" aria-label="Favoritar"><svg width="18" height="18" viewBox="0 0 24 24" fill="${favorites.has(p.id) ? "currentColor" : "none"}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button></div><div class="card-body"><div class="category">${p.cat}</div><h3>${p.name}</h3><div class="desc">${p.desc}</div><div class="price-row"><div class="price">${money(p.price)}${p.old ? `<span class="old">${money(p.old)}</span>` : ""}</div><button class="add" data-add="${p.id}">Adicionar</button></div></div></article>`;
+}
+function render() {
+  const arr = filtered();
+  document.querySelector("#count").textContent =
+    `${arr.length} ${arr.length === 1 ? "produto" : "produtos"}`;
+  document.querySelector("#grid").innerHTML = arr.length
+    ? arr.map(renderCard).join("")
+    : `<div class="empty" style="grid-column:1/-1">Nenhum produto encontrado.<br>Tente outra busca ou categoria.</div>`;
+}
+function renderFeaturedProducts() {
+  document.querySelector("#featuredGrid").innerHTML = products
+    .slice(0, 4)
+    .map(renderCard)
+    .join("");
+}
+function add(id) {
+  const item = cart.find((x) => x.id === id);
+  item ? item.qty++ : cart.push({ id, qty: 1 });
+  updateCart();
+  toast("Produto adicionado ao carrinho");
+}
+function updateCart() {
+  document.querySelector("#cartBadge").textContent = cart.reduce(
+    (s, x) => s + x.qty,
+    0,
+  );
+  const list = document.querySelector("#cartList");
+  let total = 0;
+  if (!cart.length)
+    list.innerHTML = '<div class="empty">Seu carrinho está vazio.</div>';
+  else {
+    list.innerHTML = cart
+      .map((i) => {
+        const p = products.find((x) => x.id === i.id);
+        total += p.price * i.qty;
+        return `<div class="cart-item"><img src="${p.img}" alt="${p.name}"><div><h4>${p.name}</h4><p>${money(p.price)}</p><div class="qty"><button data-minus="${p.id}">−</button><span>${i.qty}</span><button data-plus="${p.id}">+</button></div></div><button class="remove" data-remove="${p.id}">Remover</button></div>`;
+      })
+      .join("");
+  }
+  document.querySelector("#total").textContent = money(total);
+  document.querySelector("#checkout").disabled = !cart.length;
+}
+function openModal(id) {
+  selected = products.find((p) => p.id === id);
+  document.querySelector("#modalImg").src = selected.img;
+  document.querySelector("#modalImg").alt = selected.name;
+  document.querySelector("#modalCat").textContent = selected.cat;
+  document.querySelector("#modalTitle").textContent = selected.name;
+  document.querySelector("#modalDesc").textContent = selected.desc;
+  document.querySelector("#modalPrice").innerHTML =
+    money(selected.price) +
+    (selected.old ? ` <span class="old">${money(selected.old)}</span>` : "");
+  const favBtn = document.querySelector("#modalFav"),
+    favText = favBtn.querySelector("#favText");
+  if (favorites.has(id)) {
+    favBtn.classList.add("liked");
+    favText.textContent = "Favoritado";
+  } else {
+    favBtn.classList.remove("liked");
+    favText.textContent = "Favoritar";
+  }
+  document.querySelector("#modalOverlay").classList.add("open");
+}
+function toast(msg) {
+  const t = document.querySelector("#toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  setTimeout(() => t.classList.remove("show"), 2200);
+}
+document.addEventListener("click", (e) => {
+  const addBtn = e.target.closest("[data-add]"),
+    fav = e.target.closest("[data-fav]"),
+    card = e.target.closest(".card");
+  if (addBtn) {
+    e.stopPropagation();
+    add(+addBtn.dataset.add);
+    return;
+  }
+  if (fav) {
+    e.stopPropagation();
+    const id = +fav.dataset.fav;
+    favorites.has(id) ? favorites.delete(id) : favorites.add(id);
+    render();
+    renderFeaturedProducts();
+    return;
+  }
+  if (card) openModal(+card.dataset.id);
+  if (e.target.closest("[data-plus]")) {
+    const id = +e.target.closest("[data-plus]").dataset.plus;
+    cart.find((x) => x.id === id).qty++;
+    updateCart();
+  }
+  if (e.target.closest("[data-minus]")) {
+    const id = +e.target.closest("[data-minus]").dataset.minus;
+    const x = cart.find((i) => i.id === id);
+    x.qty--;
+    if (x.qty <= 0) cart = cart.filter((i) => i.id !== id);
+    updateCart();
+  }
+  if (e.target.closest("[data-remove]")) {
+    const id = +e.target.closest("[data-remove]").dataset.remove;
+    cart = cart.filter((i) => i.id !== id);
+    updateCart();
+  }
+  if (e.target.closest("[data-nav]")) {
+    const n = e.target.closest("[data-nav]").dataset.nav;
+    if (n === "Carrinho")
+      document.querySelector("#drawer").classList.add("open");
+    else if (n === "Início") {
+      goToPage("home");
+      category = "Todos";
+    } else goToCategory(n);
+  }
+  if (e.target.dataset.section === "home") {
+    e.preventDefault();
+    goToPage("home");
+  }
+  if (e.target.dataset.category) {
+    e.preventDefault();
+    goToCategory(e.target.dataset.category);
+  }
+  const catCard = e.target.closest(".category-card");
+  if (catCard) goToCategory(catCard.dataset.category);
+});
+document.querySelector("#filters").addEventListener("click", (e) => {
+  if (e.target.dataset.cat) setCategory(e.target.dataset.cat);
+});
+document.querySelector("#search").addEventListener("input", (e) => {
+  query = e.target.value;
+  render();
+});
+document.querySelector("#sort").addEventListener("change", render);
+document.querySelector("#cartBtn").onclick = () =>
+  document.querySelector("#drawer").classList.add("open");
+document.querySelector("#drawerClose").onclick = () =>
+  document.querySelector("#drawer").classList.remove("open");
+document.querySelector("#modalClose").onclick = () =>
+  document.querySelector("#modalOverlay").classList.remove("open");
+document.querySelector("#modalOverlay").addEventListener("click", (e) => {
+  if (e.target.id === "modalOverlay") e.currentTarget.classList.remove("open");
+});
+document.querySelector("#favBtn").onclick = () => {
+  goToPage("shop");
+  query = "";
+  category = "Todos";
+  render();
+  toast(`${favorites.size} favorito(s) selecionado(s)`);
+  setTimeout(
+    () =>
+      document.querySelector("#grid").scrollIntoView({ behavior: "smooth" }),
+    100,
+  );
+};
+document.querySelector("#modalAdd").onclick = () => {
+  add(selected.id);
+  document.querySelector("#modalOverlay").classList.remove("open");
+};
+document.querySelector("#modalFav").onclick = () => {
+  favorites.has(selected.id)
+    ? favorites.delete(selected.id)
+    : favorites.add(selected.id);
+  openModal(selected.id);
+  render();
+  renderFeaturedProducts();
+};
+document.querySelector("#checkout").onclick = () => {
+  if (!cart.length) return;
+  cart = [];
+  updateCart();
+  document.querySelector("#drawer").classList.remove("open");
+  toast("Pedido realizado com sucesso! Obrigado pela compra.");
+};
+document.querySelector("#btnShopNow").onclick = () => goToCategory("Todos");
+document.querySelector("#btnViewCollection").onclick = () =>
+  goToCategory("Todos");
+document.querySelector("#btnStartShopping").onclick = () =>
+  goToCategory("Todos");
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    document.querySelector("#modalOverlay").classList.remove("open");
+    document.querySelector("#drawer").classList.remove("open");
+  }
+});
+function init() {
+  goToPage("home");
+  setCategory("Todos");
+  updateCart();
+  renderFeaturedProducts();
+}
+init();
