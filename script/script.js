@@ -43,7 +43,7 @@ const products = [
     old: 999.9,
     tag: "-10%",
     desc: "Tênis de performance fictício com placa de propulsão e construção ultraleve.",
-    img: "img/0002.jpg",
+    img: "img/0002.webp",
   },
   {
     id: 3,
@@ -53,7 +53,7 @@ const products = [
     old: 749.9,
     tag: "Oferta",
     desc: "Treinador premium para academia com estabilidade e amortecimento equilibrado.",
-    img: "img/0003.jpg",
+    img: "img/br-11134207-7r98o-ma05sn4rfi82e3.jpg",
   },
   {
     id: 4,
@@ -63,7 +63,7 @@ const products = [
     old: 699.9,
     tag: "-11%",
     desc: "Tênis de quadra com suporte lateral e sola de alta aderência.",
-    img: productImage("Aero Court Premium", "tenis", "#eee4d8", "#5c3723"),
+    img: "img/images (8).jpg",
   },
   {
     id: 5,
@@ -73,7 +73,7 @@ const products = [
     old: null,
     tag: "Novo",
     desc: "Tênis para trilhas com proteção reforçada e tração em terrenos variados.",
-    img: productImage("Endurance Trail Pro", "tenis", "#e3e7dc", "#35452b"),
+    img: "img/image.webp",
   },
   {
     id: 6,
@@ -83,7 +83,7 @@ const products = [
     old: 499.9,
     tag: "-14%",
     desc: "Modelo leve e flexível para caminhada, cardio e corrida recreativa.",
-    img: productImage("FlexRun Essential", "tenis", "#e6e0ed", "#43314f"),
+    img: "img/images (9).jpg",
   },
   {
     id: 13,
